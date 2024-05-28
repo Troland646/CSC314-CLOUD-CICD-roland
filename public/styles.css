@@ -1,62 +1,77 @@
-/* Reset CSS */
-* {
+/* General styles */
+body, html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
 }
 
-/* Global Styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Payment Form Section */
+/* Background image and overlay */
 .payment-form {
-    background-image: url('background-image.jpg');
+    background-image: url('background-image.jpg'); /* Replace with your image path */
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    position: relative;
 }
 
-.payment-form .container {
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    padding: 40px;
-}
-
-.payment-form h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.payment-form form input[type="text"],
-.payment-form form button[type="submit"] {
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust overlay color and opacity */
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Container styling */
+.container {
+    background-color: rgba(255, 255, 255, 0.85); /* Slightly transparent background */
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Form elements styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    padding: 12px;
+    margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
 }
 
-.payment-form form button[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
+.btn {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 16px;
+    transition: background-color 0.3s;
 }
 
-.payment-form form button[type="submit"]:hover {
-    background-color: #0056b3;
+.btn:hover {
+    background-color: #45a049;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
 }
